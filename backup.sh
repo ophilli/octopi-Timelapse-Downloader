@@ -5,7 +5,7 @@
 #              and serves as a general introduction to bash scripting.
 USER="****"
 HOSTS=("****" "****" "****" "****")
-RDIR="/home/octoprint/.octoprint/timelapse"
+RDIR="/home/octoprint/.octoprint/timelapse/"
 LDIR="/mnt/MAKERSPACE/timelapse"
 
 for i in "{$HOSTS[@]}"; do
