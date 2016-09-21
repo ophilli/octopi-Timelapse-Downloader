@@ -9,7 +9,7 @@ RDIR="/home/octoprint/.octoprint/timelapse/"
 LDIR="/mnt/MAKERSPACE/timelapse"
 
 for i in "{$HOSTS[@]}"; do
-    rsync -avzhe ssh $USER@$i:/$RDIR $LDIR/$i
+    rsync --remove-source-files -avzhe ssh $USER@$i:/$RDIR $LDIR/$i
 done
 
 exit 0
