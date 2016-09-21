@@ -9,7 +9,7 @@ HOSTS=("****" "****" "****" "****")
 RDIR="/home/octoprint/.octoprint/timelapse"
 LDIR="/mnt/MAKERSPACE/timelapse"
 
-for i in "{$HOSTS[*]}"; do
+for i in "{$HOSTS[@]}"; do
     rsync -avzhe ssh $USER@$i:/$RDIR $LDIR/$i
     echo $PASS
 done
