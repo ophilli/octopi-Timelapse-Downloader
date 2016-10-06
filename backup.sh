@@ -11,7 +11,9 @@ LULZ="****"
 LULZDIR="/home/pi/.octoprint/timelapse/"
 
 for i in "${HOSTS[@]}"; do
-    rsync --remove-source-files -avzhe ssh $USER@$i:/$RDIR $LDIR/$i
+    rsync --exclude 'tmp' -rzhe 'ssh -q' $USER@$i:/$RDIR $LDIR/$i
+    #rsync --remove-source-files -avzhe ssh $USER@$i:/$RDIR $LDIR/$i
+
 done
 
 rsync --exclude 'tmp' -rzhe 'ssh -q' pi@$LULZ:$LULZDIR $LDIR/$LULZ
